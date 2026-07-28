@@ -115,17 +115,23 @@ to an hour once the site is confirmed working.
   at the apex is invalid DNS regardless. The four `A` records are the answer.
 - GoDaddy shows the apex as `@`, meaning `meganwong.me` itself.
 
-#### 2. Keep the repo public
+#### 2. Turn Pages on
 
-**GitHub Pages only works on private repositories with a paid plan.** On GitHub
-Free it's public-repos-only, and making this repo private will unpublish the
-site. If you ever need it private, you'd need GitHub Pro or a different host
-(Cloudflare Pages is free and supports private repos).
+Repo → **Settings** → **Pages** → **Source: GitHub Actions**
 
-Pages itself needs no manual setup — the workflow passes `enablement: true` to
-`actions/configure-pages`, which turns Pages on and sets the source to GitHub
-Actions on first run. The `CNAME` file sets the custom domain at the same time.
-Confirm **Settings → Pages** shows `meganwong.me` after the first green deploy.
+This has to be done by hand, once. The workflow cannot do it for itself: the
+default `GITHUB_TOKEN` can deploy to an existing Pages site but is not allowed
+to create one, so `actions/configure-pages` with `enablement: true` fails with
+*"Create Pages site failed. Resource not accessible by integration."* Until this
+switch is flipped, every deploy fails at the Configure Pages step.
+
+The `CNAME` file sets the custom domain automatically on first deploy. Confirm
+**Settings → Pages** shows `meganwong.me` once a deploy goes green.
+
+Also keep the repo **public**: on the GitHub free plan Pages is public-repos-only,
+so making it private would unpublish the site. If it ever needs to be private,
+that means GitHub Pro or a different host (Cloudflare Pages is free and supports
+private repos).
 
 #### 3. Enforce HTTPS
 
