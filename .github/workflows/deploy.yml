@@ -25,8 +25,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # enablement: true turns Pages on via the API and sets the source to
+      # GitHub Actions, so there is no manual Settings step to forget.
+      # Requires a public repo, or GitHub Pro if the repo is private.
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       # The site is plain static files, so the repo root is the artifact.
       - name: Upload artifact
