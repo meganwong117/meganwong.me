@@ -1,21 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MW">
   <style>
-    .bg { fill: #faf8f4; }
-    .fg { fill: #1a1a1a; }
+    .bg { fill: #111111; }
+    .fg { fill: #f4f4f2; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #16150f; }
-      .fg { fill: #f2efe8; }
+      .bg { fill: #ededea; }
+      .fg { fill: #0e0e0d; }
     }
   </style>
-  <rect class="bg" width="64" height="64" rx="10" />
+  <rect class="bg" width="64" height="64" />
   <text
     class="fg"
     x="32"
-    y="33"
+    y="34"
     text-anchor="middle"
     dominant-baseline="central"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="30"
-    letter-spacing="-1"
+    font-family="Helvetica, Arial, sans-serif"
+    font-size="27"
+    font-weight="500"
+    letter-spacing="-1.5"
   >MW</text>
 </svg>

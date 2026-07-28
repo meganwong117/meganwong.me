@@ -27,8 +27,8 @@
       content="The professional experience of Megan Wong, product manager based in London, UK."
     />
 
-    <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#16150f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f4f4f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)" />
 
     <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
@@ -36,7 +36,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
 
@@ -58,7 +58,7 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" data-header>
+    <header class="site-header">
       <div class="wrap site-header__inner">
         <a class="wordmark" href="/">Megan Wong</a>
 
@@ -72,19 +72,8 @@
         </nav>
 
         <div class="site-header__actions">
-          <button
-            class="theme-toggle"
-            type="button"
-            data-theme-toggle
-            aria-label="Switch between light and dark theme"
-          >
-            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-            </svg>
-            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="4" />
-              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-            </svg>
+          <button class="theme-toggle" type="button" data-theme-toggle>
+            <span data-theme-label>Dark</span>
           </button>
 
           <button
@@ -92,58 +81,64 @@
             type="button"
             data-nav-toggle
             aria-expanded="false"
-            aria-label="Menu"
           >
-            <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            </svg>
-            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
-              <path d="M6 6l12 12M18 6L6 18" />
-            </svg>
+            <span class="label-open">Menu</span>
+            <span class="label-close">Close</span>
           </button>
         </div>
       </div>
     </header>
 
     <main id="main">
-      <!-- =========================== Page head ========================== -->
-      <section class="page-header">
-        <div class="wrap">
-          <span class="eyebrow">Curriculum vitae</span>
-          <h1 class="page-header__title">Megan Wong</h1>
-          <p class="page-header__sub">
-            Product manager, London UK &middot; 4.5+ years&rsquo; experience &middot;
-            <a class="link" href="mailto:meganwong117@gmail.com">meganwong117@gmail.com</a>
-          </p>
+      <!-- ===================== Page head ======================= -->
+      <section class="page-head">
+        <div class="wrap split">
+          <div class="split__label">
+            <span class="meta meta--ink">CV</span>
+            <span class="meta">London, UK</span>
+            <span class="meta">4.5+ years</span>
+          </div>
 
-          <div class="button-row no-print">
-            <!-- TODO: uncomment once assets/megan-wong-cv.pdf exists
-            <a class="button" href="/assets/megan-wong-cv.pdf" download>Download PDF</a>
-            -->
-            <button class="button button--ghost" type="button" data-print>
-              Print / save as PDF
-            </button>
+          <div class="split__body">
+            <h1 class="page-head__display">
+              <span>Megan</span>
+              <span>Wong</span>
+            </h1>
+
+            <p class="page-head__sub">
+              Product manager. Discovery, delivery, and the stakeholder wrangling
+              in between.
+            </p>
+
+            <div class="button-row no-print">
+              <!-- TODO: uncomment once assets/megan-wong-cv.pdf exists
+              <a class="button" href="/assets/megan-wong-cv.pdf" download>Download PDF</a>
+              -->
+              <button class="button button--ghost" type="button" data-print>
+                Print / save as PDF
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ========================== Experience ========================== -->
-      <section class="section" id="experience" data-reveal>
-        <div class="wrap section__grid">
-          <div class="section__head">
-            <span class="eyebrow">01</span>
-            <h2 class="section__title">Experience</h2>
+      <!-- ===================== 01 — Experience ================= -->
+      <section class="band" id="experience">
+        <div class="wrap split">
+          <div class="split__label">
+            <span class="meta meta--ink">01 &nbsp;/&nbsp; Experience</span>
           </div>
 
-          <div>
+          <div class="split__body">
             <!-- TODO: replace with real roles.
-                 Copy one <li class="role"> block per position, newest first.
-                 Keep 2-4 bullets each; lead with the outcome, not the task. -->
+                 One <li class="role"> per position, newest first.
+                 Lead each bullet with the outcome, not the task. -->
             <ol class="roles">
               <li class="role">
-                <div class="role__dates">2023 &ndash; Present</div>
+                <span class="role__num">001</span>
+                <span class="role__dates">2023 &ndash; Present</span>
                 <div>
-                  <h3 class="role__title">Product Manager</h3>
+                  <h2 class="role__title">Product Manager</h2>
                   <span class="role__org">Company name &middot; London, UK</span>
                   <ul class="role__points">
                     <li>What you owned, and the scope of it.</li>
@@ -154,9 +149,10 @@
               </li>
 
               <li class="role">
-                <div class="role__dates">2021 &ndash; 2023</div>
+                <span class="role__num">002</span>
+                <span class="role__dates">2021 &ndash; 2023</span>
                 <div>
-                  <h3 class="role__title">Previous role</h3>
+                  <h2 class="role__title">Previous role</h2>
                   <span class="role__org">Company name &middot; Location</span>
                   <ul class="role__points">
                     <li>What you owned, and the scope of it.</li>
@@ -166,9 +162,10 @@
               </li>
 
               <li class="role">
-                <div class="role__dates">2020 &ndash; 2021</div>
+                <span class="role__num">003</span>
+                <span class="role__dates">2020 &ndash; 2021</span>
                 <div>
-                  <h3 class="role__title">Earlier role</h3>
+                  <h2 class="role__title">Earlier role</h2>
                   <span class="role__org">Company name &middot; Location</span>
                   <ul class="role__points">
                     <li>What you owned, and the scope of it.</li>
@@ -181,22 +178,16 @@
         </div>
       </section>
 
-      <!-- ============================ Skills ============================ -->
-      <section class="section" id="skills" data-reveal>
-        <div class="wrap section__grid">
-          <div class="section__head">
-            <span class="eyebrow">02</span>
-            <h2 class="section__title">Skills</h2>
+      <!-- ===================== 02 — Skills ===================== -->
+      <section class="band" id="skills">
+        <div class="wrap split">
+          <div class="split__label">
+            <span class="meta meta--ink">02 &nbsp;/&nbsp; Skills</span>
           </div>
 
-          <div>
-            <p class="prose mb-m">
-              <!-- TODO: one line framing how you work, or delete this -->
-              How I work, in the shortest possible form.
-            </p>
-
+          <div class="split__body">
             <!-- TODO: replace with your actual skills -->
-            <ul class="taglist">
+            <ul class="tags">
               <li>Product discovery</li>
               <li>Roadmapping</li>
               <li>User research</li>
@@ -212,21 +203,21 @@
         </div>
       </section>
 
-      <!-- ========================== Education =========================== -->
-      <section class="section" id="education" data-reveal>
-        <div class="wrap section__grid">
-          <div class="section__head">
-            <span class="eyebrow">03</span>
-            <h2 class="section__title">Education</h2>
+      <!-- ===================== 03 — Education ================== -->
+      <section class="band" id="education">
+        <div class="wrap split">
+          <div class="split__label">
+            <span class="meta meta--ink">03 &nbsp;/&nbsp; Education</span>
           </div>
 
-          <div>
+          <div class="split__body">
             <!-- TODO: replace with real education -->
             <ol class="roles">
               <li class="role">
-                <div class="role__dates">Year &ndash; Year</div>
+                <span class="role__num">001</span>
+                <span class="role__dates">Year &ndash; Year</span>
                 <div>
-                  <h3 class="role__title">Degree and subject</h3>
+                  <h2 class="role__title">Degree and subject</h2>
                   <span class="role__org">Institution &middot; Location</span>
                   <ul class="role__points">
                     <li>Honours, focus, or anything worth a line.</li>
@@ -238,36 +229,43 @@
         </div>
       </section>
 
-      <!-- =========================== Contact ============================ -->
-      <section class="section" id="cv-contact" data-reveal>
-        <div class="wrap section__grid">
-          <div class="section__head">
-            <span class="eyebrow">04</span>
-            <h2 class="section__title">Contact</h2>
+      <!-- ===================== 04 — Contact ==================== -->
+      <section class="band" id="cv-contact">
+        <div class="wrap split">
+          <div class="split__label">
+            <span class="meta meta--ink">04 &nbsp;/&nbsp; Contact</span>
           </div>
 
-          <div>
-            <ul class="linklist">
-              <li class="linklist__row">
-                <span class="linklist__label">Email</span>
-                <a class="link" href="mailto:meganwong117@gmail.com">meganwong117@gmail.com</a>
-              </li>
-              <li class="linklist__row">
-                <span class="linklist__label">LinkedIn</span>
-                <!-- TODO: replace with your LinkedIn URL -->
-                <a class="link" href="https://www.linkedin.com/in/" rel="me noopener">
-                  linkedin.com/in/&hellip;
-                </a>
-              </li>
-              <li class="linklist__row">
-                <span class="linklist__label">Website</span>
-                <a class="link" href="https://meganwong.me/">meganwong.me</a>
-              </li>
-              <li class="linklist__row">
-                <span class="linklist__label">Location</span>
-                <span>London, UK</span>
-              </li>
-            </ul>
+          <div class="split__body">
+            <dl class="table">
+              <div class="table__row">
+                <dt class="meta">Email</dt>
+                <dd class="table__value">
+                  <a class="link" href="mailto:meganwong117@gmail.com">
+                    meganwong117@gmail.com
+                  </a>
+                </dd>
+              </div>
+              <div class="table__row">
+                <dt class="meta">LinkedIn</dt>
+                <dd class="table__value">
+                  <!-- TODO: replace with your LinkedIn URL -->
+                  <a class="link" href="https://www.linkedin.com/in/" rel="me noopener">
+                    linkedin.com/in/&hellip;
+                  </a>
+                </dd>
+              </div>
+              <div class="table__row">
+                <dt class="meta">Website</dt>
+                <dd class="table__value">
+                  <a class="link" href="https://meganwong.me/">meganwong.me</a>
+                </dd>
+              </div>
+              <div class="table__row">
+                <dt class="meta">Location</dt>
+                <dd class="table__value">London, United Kingdom</dd>
+              </div>
+            </dl>
           </div>
         </div>
       </section>
@@ -275,10 +273,10 @@
 
     <footer class="site-footer">
       <div class="wrap site-footer__inner">
-        <p class="m-0">&copy; <span data-year>2026</span> Megan Wong</p>
+        <span>&copy; <span data-year>2026</span> Megan Wong</span>
 
         <ul class="site-footer__links">
-          <li><a href="/">Home</a></li>
+          <li><a href="/">Index</a></li>
           <li><a href="mailto:meganwong117@gmail.com">Email</a></li>
           <!-- TODO: replace with your LinkedIn URL -->
           <li><a href="https://www.linkedin.com/in/" rel="me noopener">LinkedIn</a></li>
