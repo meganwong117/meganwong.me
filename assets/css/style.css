@@ -417,12 +417,19 @@ html:not(.js) .theme-toggle {
   display: block;
 }
 
-.hero__display .is-accent {
+/* The name is the headline; the role is the designation beneath it. */
+
+.hero__role {
+  margin-top: var(--space-m);
+  font-size: var(--t-l);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--accent);
 }
 
 .hero__lede {
-  margin-top: var(--space-m);
+  margin-top: var(--space-s);
   max-width: 34ch;
   font-size: var(--t-l);
   line-height: 1.25;
