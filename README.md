@@ -67,39 +67,81 @@ repo root to GitHub Pages. No build, so a deploy takes under a minute.
 
 ### One-time setup
 
-These need repo-owner and domain-registrar access.
+Two halves — DNS at GoDaddy, and Pages on GitHub. They're independent, so do the
+DNS first: propagation is the slowest part.
 
-**1. Turn Pages on**
+#### 1. GoDaddy DNS
+
+Sign in → **My Products** → your domain → **DNS** (or ⋮ → **Manage DNS**).
+
+**Edit GoDaddy's default parked `A` record on `@` rather than adding alongside
+it.** GoDaddy pre-creates an `A` record pointing at one of its parking IPs, and
+leaving it in place is the most common reason this doesn't work — requests keep
+landing on the parking page. Delete it or change its value.
+
+Target state:
+
+| Type  | Name  | Value                   | TTL     |
+| ----- | ----- | ----------------------- | ------- |
+| A     | `@`   | `185.199.108.153`       | 600 sec |
+| A     | `@`   | `185.199.109.153`       | 600 sec |
+| A     | `@`   | `185.199.110.153`       | 600 sec |
+| A     | `@`   | `185.199.111.153`       | 600 sec |
+| CNAME | `www` | `meganwong117.github.io`| 600 sec |
+
+Four `A` records sharing the name `@` is correct — they're GitHub's four Pages
+servers, and the redundancy is what keeps the site up if one goes down. GoDaddy
+permits duplicate names on `A` records.
+
+IPv6 is optional but free and helps visitors on mobile networks:
+
+| Type | Name | Value                 |
+| ---- | ---- | --------------------- |
+| AAAA | `@`  | `2606:50c0:8000::153` |
+| AAAA | `@`  | `2606:50c0:8001::153` |
+| AAAA | `@`  | `2606:50c0:8002::153` |
+| AAAA | `@`  | `2606:50c0:8003::153` |
+
+Keep TTL at 600 seconds during setup so mistakes are cheap to correct. Raise it
+to an hour once the site is confirmed working.
+
+**GoDaddy-specific traps**
+
+- **Domain Forwarding** (Domain Settings → Forwarding) injects its own `A` record
+  that competes with these. Turn it off.
+- **Websites + Marketing** — if the domain is attached to GoDaddy's site builder,
+  that product overrides your DNS records. Disconnect the domain from it.
+- **No CNAME on `@`.** GoDaddy's free DNS has no ALIAS/ANAME support, and a CNAME
+  at the apex is invalid DNS regardless. The four `A` records are the answer.
+- GoDaddy shows the apex as `@`, meaning `meganwong.me` itself.
+
+#### 2. Turn Pages on
 
 Repo → **Settings** → **Pages** → **Source: GitHub Actions**
 
-**2. Point the domain at GitHub**
+The `CNAME` file in this repo sets the custom domain automatically on first
+deploy. Confirm **Settings → Pages** shows `meganwong.me`; add it by hand if not.
 
-At your domain registrar, add these DNS records for `meganwong.me`:
+#### 3. Enforce HTTPS
 
-| Type  | Name  | Value                     |
-| ----- | ----- | ------------------------- |
-| A     | `@`   | `185.199.108.153`         |
-| A     | `@`   | `185.199.109.153`         |
-| A     | `@`   | `185.199.110.153`         |
-| A     | `@`   | `185.199.111.153`         |
-| CNAME | `www` | `meganwong117.github.io.` |
+Once DNS resolves, GitHub issues a free certificate and the **Enforce HTTPS**
+checkbox becomes available. It stays greyed out until the certificate lands —
+usually minutes, occasionally up to an hour.
 
-All four A records are needed — they're GitHub's Pages servers, and the
-redundancy is what keeps the site up if one goes down.
-
-**3. Attach the domain**
-
-Repo → **Settings** → **Pages** → **Custom domain** → `meganwong.me` → Save.
-
-GitHub will verify DNS (usually minutes, occasionally up to an hour). Once it
-passes, tick **Enforce HTTPS** — the certificate is issued automatically and is
-free.
+Worth doing eventually: **Settings → Pages → Verify domain** adds a TXT record
+that protects against domain takeover if the site ever moves off GitHub.
 
 ### Checking it worked
 
 ```sh
+dig +short meganwong.me                          # expect: the four 185.199.x.153 addresses
 curl -sSI https://meganwong.me/ | head -1        # expect: HTTP/2 200
 curl -sSI http://meganwong.me/ | head -1         # expect: a 301 to https
 curl -sSI https://www.meganwong.me/ | head -1    # expect: a 301 to the apex
 ```
+
+| Symptom                                       | Cause                                          |
+| --------------------------------------------- | ---------------------------------------------- |
+| GitHub-branded "There isn't a Pages site here" | DNS is right; Pages isn't publishing           |
+| GoDaddy parking page                           | A stale GoDaddy record survived                |
+| Certificate warning                            | Cert still provisioning — wait, then try again |
