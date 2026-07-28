@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Megan Wong — Product Manager, London</title>
+    <meta
+      name="description"
+      content="Megan Wong is a product manager based in London, UK, by way of Hong Kong, Vancouver Island and Los Angeles."
+    />
+    <link rel="canonical" href="https://meganwong.me/" />
+
+    <!-- Open Graph / social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Megan Wong" />
+    <meta property="og:title" content="Megan Wong — Product Manager, London" />
+    <meta
+      property="og:description"
+      content="Product manager based in London, UK, by way of Hong Kong, Vancouver Island and Los Angeles."
+    />
+    <meta property="og:url" content="https://meganwong.me/" />
+    <meta property="og:locale" content="en_GB" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Megan Wong — Product Manager, London" />
+    <meta
+      name="twitter:description"
+      content="Product manager based in London, UK, by way of Hong Kong, Vancouver Island and Los Angeles."
+    />
+
+    <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#16150f" media="(prefers-color-scheme: dark)" />
+
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/img/favicon.svg" />
+
+    <!-- Fonts. System fallbacks are declared in CSS, so the page is readable
+         immediately even if these never arrive. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Applied before first paint to avoid a theme flash -->
+    <script>
+      (function () {
+        document.documentElement.classList.add("js");
+        try {
+          var stored = localStorage.getItem("theme");
+          if (stored === "dark" || stored === "light") {
+            document.documentElement.setAttribute("data-theme", stored);
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Megan Wong",
+        "url": "https://meganwong.me/",
+        "jobTitle": "Product Manager",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "London",
+          "addressCountry": "GB"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="wrap site-header__inner">
+        <a class="wordmark" href="/">Megan Wong</a>
+
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav__list" data-nav-list>
+            <li><a class="nav__link" href="#about">About</a></li>
+            <li><a class="nav__link" href="#work">Work</a></li>
+            <li><a class="nav__link" href="/cv/">CV</a></li>
+            <li><a class="nav__link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-header__actions">
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            aria-label="Switch between light and dark theme"
+          >
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </button>
+
+          <button
+            class="nav__toggle"
+            type="button"
+            data-nav-toggle
+            aria-expanded="false"
+            aria-label="Menu"
+          >
+            <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+            <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ============================ Hero ============================ -->
+      <section class="hero">
+        <div class="wrap">
+          <h1 class="hero__name">Megan Wong</h1>
+
+          <p class="hero__lede">
+            Product manager, <em>building things people actually use</em>.
+          </p>
+
+          <ul class="trail" aria-label="Places I have lived">
+            <li>Hong Kong</li>
+            <li>Vancouver Island</li>
+            <li>Los Angeles</li>
+            <li>London</li>
+          </ul>
+
+          <div class="button-row">
+            <a class="button" href="/cv/">Read my CV</a>
+            <a class="button button--ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ About ============================ -->
+      <section class="section" id="about" data-reveal>
+        <div class="wrap section__grid">
+          <div class="section__head">
+            <span class="eyebrow">About</span>
+            <h2 class="section__title">Hello</h2>
+          </div>
+
+          <div class="prose">
+            <!-- TODO: replace with Megan's own words -->
+            <p>
+              I&rsquo;m a product manager with just over four and a half years of
+              experience, based in London. I care about the unglamorous middle of
+              product work &mdash; the questions nobody has framed properly yet, the
+              decisions that quietly set the direction for everything after.
+            </p>
+            <p>
+              I grew up in Hong Kong, studied and worked on Vancouver Island and in
+              Los Angeles, and now call London home. Four cities, four very different
+              ways of seeing a problem &mdash; it has made me better at noticing when a
+              team has agreed on words without agreeing on meaning.
+            </p>
+            <p>
+              <!-- TODO: what you're working on now, what you want next -->
+              Currently focused on <strong>[what you&rsquo;re working on]</strong>. Always
+              interested in talking to people building thoughtful products.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================ Work ============================= -->
+      <section class="section" id="work" data-reveal>
+        <div class="wrap section__grid">
+          <div class="section__head">
+            <span class="eyebrow">Work</span>
+            <h2 class="section__title">Selected projects</h2>
+          </div>
+
+          <div>
+            <p class="prose mb-m">
+              <!-- TODO: replace or delete this intro -->
+              A few things I&rsquo;ve shipped, and what changed because of them.
+            </p>
+
+            <!-- TODO: replace each card. Keep the structure, swap the words.
+                 Delete .card--placeholder once a card has real content. -->
+            <ul class="cards">
+              <li class="card card--placeholder">
+                <span class="card__meta">Coming soon</span>
+                <h3 class="card__title">Project one</h3>
+                <p class="card__body">
+                  The problem in a sentence &mdash; then what you did about it, and
+                  the outcome it produced.
+                </p>
+              </li>
+
+              <li class="card card--placeholder">
+                <span class="card__meta">Coming soon</span>
+                <h3 class="card__title">Project two</h3>
+                <p class="card__body">
+                  The problem in a sentence &mdash; then what you did about it, and
+                  the outcome it produced.
+                </p>
+              </li>
+
+              <li class="card card--placeholder">
+                <span class="card__meta">Coming soon</span>
+                <h3 class="card__title">Project three</h3>
+                <p class="card__body">
+                  The problem in a sentence &mdash; then what you did about it, and
+                  the outcome it produced.
+                </p>
+              </li>
+
+              <li class="card card--placeholder">
+                <span class="card__meta">Coming soon</span>
+                <h3 class="card__title">Project four</h3>
+                <p class="card__body">
+                  The problem in a sentence &mdash; then what you did about it, and
+                  the outcome it produced.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================= CV ============================== -->
+      <section class="section" id="cv" data-reveal>
+        <div class="wrap section__grid">
+          <div class="section__head">
+            <span class="eyebrow">Experience</span>
+            <h2 class="section__title">CV</h2>
+          </div>
+
+          <div class="prose">
+            <p>
+              Four and a half years across product discovery, delivery and the
+              stakeholder wrangling in between. The full history &mdash; roles,
+              responsibilities and what each one taught me &mdash; lives on its own
+              page.
+            </p>
+
+            <div class="button-row">
+              <a class="button" href="/cv/">View full CV</a>
+              <!-- TODO: uncomment once assets/megan-wong-cv.pdf exists
+              <a class="button button--ghost" href="/assets/megan-wong-cv.pdf" download>
+                Download PDF
+              </a>
+              -->
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================== Contact =========================== -->
+      <section class="section" id="contact" data-reveal>
+        <div class="wrap section__grid">
+          <div class="section__head">
+            <span class="eyebrow">Contact</span>
+            <h2 class="section__title">Say hello</h2>
+          </div>
+
+          <div>
+            <p class="prose mb-m">
+              The quickest way to reach me is email. I read everything, and I reply to
+              most things.
+            </p>
+
+            <ul class="linklist">
+              <li class="linklist__row">
+                <span class="linklist__label">Email</span>
+                <a class="link" href="mailto:meganwong117@gmail.com">meganwong117@gmail.com</a>
+              </li>
+              <li class="linklist__row">
+                <span class="linklist__label">LinkedIn</span>
+                <!-- TODO: replace with your LinkedIn URL -->
+                <a class="link" href="https://www.linkedin.com/in/" rel="me noopener">
+                  linkedin.com/in/&hellip;
+                </a>
+              </li>
+              <li class="linklist__row">
+                <span class="linklist__label">Location</span>
+                <span>London, UK</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <p class="m-0">
+          &copy; <span data-year>2026</span> Megan Wong
+        </p>
+
+        <ul class="site-footer__links">
+          <li><a href="mailto:meganwong117@gmail.com">Email</a></li>
+          <!-- TODO: replace with your LinkedIn URL -->
+          <li><a href="https://www.linkedin.com/in/" rel="me noopener">LinkedIn</a></li>
+          <li><a href="/cv/">CV</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+  </body>
+</html>
