@@ -551,9 +551,13 @@ html:not(.js) .theme-toggle {
 }
 
 @media (min-width: 48em) {
-  .row__link,
   .row__inner {
-    grid-template-columns: 3.5rem minmax(0, 18rem) minmax(0, 1fr) 2rem;
+    grid-template-columns: 3.5rem minmax(0, 16rem) minmax(0, 1fr);
+  }
+
+  /* Linked rows reserve a trailing column for the arrow */
+  .row__link {
+    grid-template-columns: 3.5rem minmax(0, 16rem) minmax(0, 1fr) 2rem;
   }
 }
 
@@ -567,6 +571,16 @@ html:not(.js) .theme-toggle {
 .row__title {
   font-size: var(--t-l);
   letter-spacing: -0.02em;
+}
+
+.row__org {
+  display: block;
+  margin-top: var(--space-3xs);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 .row__desc {
@@ -789,6 +803,14 @@ html:not(.js) .theme-toggle {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
+}
+
+/* Company context — valuation, backers, one line of framing */
+.role__note {
+  margin: var(--space-3xs) 0 0;
+  font-size: var(--t-xs);
+  letter-spacing: 0.06em;
+  color: var(--muted);
 }
 
 .role__points {
