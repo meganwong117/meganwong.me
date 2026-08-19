@@ -55,7 +55,10 @@
   --page: 84rem;
   --measure: 60ch;
 
-  --label-col: 12rem;
+  /* Label column must hold the longest band title ("BACKGROUND") with
+     clear air before the vertical rule. --gutter is that air. */
+  --label-col: 15rem;
+  --gutter: 3rem;
 
   color-scheme: light;
 }
@@ -201,12 +204,12 @@ a {
   }
 
   .split__label {
-    padding-right: var(--space-l);
+    padding-right: var(--gutter);
     border-right: 1px solid var(--rule);
   }
 
   .split__body {
-    padding-left: var(--space-l);
+    padding-left: var(--gutter);
   }
 }
 
@@ -505,11 +508,14 @@ html:not(.js) .theme-toggle {
   }
 }
 
+/* Sized to fit the longest title inside --label-col minus --gutter, so it
+   can never crowd the vertical rule. Break-word is the backstop. */
 .band__title {
   margin-top: var(--space-2xs);
-  font-size: var(--t-l);
+  font-size: clamp(1.15rem, 1rem + 0.55vw, 1.4rem);
   text-transform: uppercase;
   letter-spacing: -0.01em;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 56em) {
